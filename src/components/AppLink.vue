@@ -23,9 +23,11 @@ if (props.href.startsWith('mailto:')) {
 
 <template>
     <div class="app-link">
-        <img v-if="icon" class="app-link-icon" :src="icon">
-        <img v-if="uninvertedIcon" class="app-link-uninverted-icon" :src="uninvertedIcon">
-        <a type="button" ref="aElement" :href="absoluteHref" :onclick="onclick" :target="target">{{ text }}</a>
+        <a type="button" ref="aElement" :href="absoluteHref" :onclick="onclick" :target="target">
+            <img v-if="icon" class="app-link-icon" :src="icon">
+            <img v-if="uninvertedIcon" class="app-link-uninverted-icon" :src="uninvertedIcon">
+            {{ text }}
+        </a>
     </div>
 </template>
 

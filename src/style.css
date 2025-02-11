@@ -1,0 +1,26 @@
+:root {
+    /* font-family: Inter, sans-serif; */
+    font-family: "Open Sans", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: rgb(255, 246, 230);
+    color: rgb(37, 79, 26);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* a::after {
+    background: rgba(77, 107, 254, 0.5);
+    background: rgba(77, 107, 254, 0.8);
+} */

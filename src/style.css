@@ -19,8 +19,3 @@ main {
     justify-content: flex-start;
     align-items: center;
 }
-
-/* a::after {
-    background: rgba(77, 107, 254, 0.5);
-    background: rgba(77, 107, 254, 0.8);
-} */

@@ -66,7 +66,6 @@ a, a:visited {
     top: 50%;
     transform: translateY(-50%);
     left: 12px;
-    /* z-index: -10; */
 }
 .app-link:hover .app-link-icon {
     filter: invert(1)

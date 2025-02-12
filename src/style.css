@@ -1,4 +1,6 @@
 :root {
+    --white: rgb(255, 246, 230);
+    --green: rgb(37, 79, 26);
     font-family: "Inter", sans-serif;
     text-align: center;
 }
@@ -9,8 +11,8 @@ body {
 }
 
 main {
-    background-color: rgb(255, 246, 230);
-    color: rgb(37, 79, 26);
+    background-color: var(--white);
+    color: var(--green);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

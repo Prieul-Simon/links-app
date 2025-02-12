@@ -33,14 +33,14 @@ if (props.href.startsWith('mailto:')) {
 
 <style scoped>
 .app-link {
-    border: 2px solid rgb(37, 79, 26);
+    border: 2px solid var(--green);
     border-radius: 30px;
     width: 80%;
     align-self: center;
     position: relative;
 }
 .app-link:hover {
-    background-color: rgb(37, 79, 26);
+    background-color: var(--green);
 }
 
 a {
@@ -54,7 +54,7 @@ a, a:visited {
 }
 .app-link:hover,
 .app-link-icon:hover {
-    color: rgb(255, 246, 230);
+    color: var(--white);
     cursor: pointer;
 }
 

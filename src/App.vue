@@ -37,7 +37,7 @@ const emailHref = 'mailto:YzJsdGIyNHVjSEpwWlhWc1FHZHRZV2xzTG1OdmJRPT0=?subject=M
 // ]
 const links: ComponentProps<typeof AppLink>[] = [
     {
-        text: 'My website',
+        text: 'My homepage',
         href: 'https://simon.prieul.fr',
         icon: webIconSource,
     },

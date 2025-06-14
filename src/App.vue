@@ -2,6 +2,7 @@
 import AppLink from './components/AppLink.vue';
 import ProfilePicture from './components/ProfilePicture.vue';
 import blueskyIconSource from './images/bluesky.svg';
+import chessIconSource from './images/chess.svg';
 import envelopeIconSource from './images/envelope.svg';
 import ghIconSource from './images/gh.svg';
 import idcardIconSource from './images/idcard.svg';
@@ -25,6 +26,10 @@ const profileDescription = [
 
 const emailHref = 'mailto:YzJsdGIyNHVjSEpwWlhWc1FHZHRZV2xzTG1OdmJRPT0=?subject=Mail from your website'
 
+type HideableAppLink = {
+    hidden?: boolean,
+}
+
 // const socialLinks: ComponentProps<typeof IconLink>[] = [
 //     {
 //         href: 'instagram',
@@ -35,7 +40,7 @@ const emailHref = 'mailto:YzJsdGIyNHVjSEpwWlhWc1FHZHRZV2xzTG1OdmJRPT0=?subject=M
 //         icon: 'bluesky',
 //     }
 // ]
-const links: ComponentProps<typeof AppLink>[] = [
+const links: (ComponentProps<typeof AppLink> & HideableAppLink)[] = [
     {
         text: 'My homepage',
         href: 'https://simon.prieul.fr',
@@ -77,11 +82,18 @@ const links: ComponentProps<typeof AppLink>[] = [
         uninvertedIcon: moxfieldIconSource,
     },
     {
+        hidden: true,
+        text: 'Chess.com',
+        href: 'chesscomm',
+        icon: chessIconSource,
+    },
+    {
         text: 'Contact me',
         href: emailHref,
         icon: envelopeIconSource,
     },
 ]
+const nonHiddenLinks = links.filter(link => link.hidden !== true)
 </script>
 
 <template>
@@ -100,7 +112,7 @@ const links: ComponentProps<typeof AppLink>[] = [
             />
         </div> -->
         <div id="links-container">
-            <app-link v-for="link in links"
+            <app-link v-for="link in nonHiddenLinks"
                         :text="link.text"
                         :href="link.href"
                         :icon="link.icon"

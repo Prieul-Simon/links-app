@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppLink from './components/AppLink.vue';
+import IconLink from './components/IconLink.vue';
 import ProfilePicture from './components/ProfilePicture.vue';
 import blueskyIconSource from './images/bluesky.svg';
 import chessIconSource from './images/chess.svg';
@@ -26,21 +27,21 @@ const profileDescription = [
 
 const emailHref = 'mailto:YzJsdGIyNHVjSEpwWlhWc1FHZHRZV2xzTG1OdmJRPT0=?subject=Mail from your website'
 
-type HideableAppLink = {
+type HideableLink = {
     hidden?: boolean,
 }
 
-// const socialLinks: ComponentProps<typeof IconLink>[] = [
-//     {
-//         href: 'instagram',
-//         icon: 'instagram',
-//     },
-//     {
-//         href: 'bluesky',
-//         icon: 'bluesky',
-//     }
-// ]
-const links: (ComponentProps<typeof AppLink> & HideableAppLink)[] = [
+const socialLinks: (ComponentProps<typeof IconLink> & HideableLink)[] = [
+    {
+        href: 'instagram',
+        icon: 'instagram',
+    },
+    {
+        href: 'bluesky',
+        icon: 'bluesky',
+    }
+]
+const links: (ComponentProps<typeof AppLink> & HideableLink)[] = [
     {
         text: 'My homepage',
         href: 'https://simon.prieul.fr',
@@ -67,11 +68,13 @@ const links: (ComponentProps<typeof AppLink> & HideableAppLink)[] = [
         icon: ghIconSource,
     },
     {
+        hidden: true,
         text: 'Instagram',
         href: 'instagram',
         icon: instagramIconSource,
     },
     {
+        hidden: true,
         text: 'Bluesky',
         href: 'bluesky',
         icon: blueskyIconSource,
@@ -93,6 +96,8 @@ const links: (ComponentProps<typeof AppLink> & HideableAppLink)[] = [
         icon: envelopeIconSource,
     },
 ]
+
+const nonHiddenSocialLinks = socialLinks.filter(link => link.hidden !== true)
 const nonHiddenLinks = links.filter(link => link.hidden !== true)
 </script>
 
@@ -105,12 +110,12 @@ const nonHiddenLinks = links.filter(link => link.hidden !== true)
         </div>
         <h1 id="profile-title">Simon Prieul</h1>
         <h2 id="profile-description"><span v-for="part in profileDescription">{{ part }}</span></h2>
-        <!-- <div id="social-links-container">
-            <icon-link v-for="link in socialLinks"
+        <div id="social-links-container">
+            <icon-link v-for="link in nonHiddenSocialLinks"
                         :href="link.href"
                         :icon="link.icon"
             />
-        </div> -->
+        </div>
         <div id="links-container">
             <app-link v-for="link in nonHiddenLinks"
                         :text="link.text"
@@ -142,6 +147,16 @@ const nonHiddenLinks = links.filter(link => link.hidden !== true)
     display: inline-block;
     white-space-collapse: preserve;
     text-wrap-mode: wrap;
+}
+#social-links-container {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 #links-container {
     display: flex;

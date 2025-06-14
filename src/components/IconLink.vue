@@ -9,18 +9,32 @@ const props = defineProps<{
     icon: IconType,
 }>()
 
-const absoluteHref = props.href.startsWith('http') || props.href.startsWith('mailto:')
-    ? props.href
-    : `https://links.prieul.fr/${props.href}`
-
-
+const absoluteHref = `https://links.prieul.fr/${props.href}`
+const computeFontAwesome: ((icon: IconType) => string) = (icon) => {
+    switch (icon) {
+        case 'bluesky':
+            return 'fa-brands fa-bluesky'
+        case 'instagram':
+            return 'fa-brands fa-instagram'
+        default:
+            return 'fa-solid fa-circle-question'
+    }
+}
 </script>
 
 <template>
-    <div class="icon-link">
-        <a type="button" :href="absoluteHref" target="_blank">icon {{ icon }}</a>
-    </div>
+    <a class="icon-link" type="button" :href="absoluteHref" target="_blank">
+        <i :class="computeFontAwesome(icon)"></i>
+    </a>
 </template>
 
 <style scoped>
+.icon-link {
+    font-size: 1.5rem;
+    color: var(--green);
+}
+.icon-link:hover {
+    cursor: pointer;
+    filter: brightness(0.6);
+}
 </style>

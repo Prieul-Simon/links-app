@@ -4,6 +4,7 @@ import IconLink from './components/IconLink.vue';
 import ProfilePicture from './components/ProfilePicture.vue';
 import blueskyIconSource from './images/bluesky.svg';
 import chessIconSource from './images/chess.svg';
+import coffeeIconSource from './images/coffee.svg';
 import envelopeIconSource from './images/envelope.svg';
 import ghIconSource from './images/gh.svg';
 import idcardIconSource from './images/idcard.svg';
@@ -94,6 +95,11 @@ const links: (ComponentProps<typeof AppLink> & HideableLink)[] = [
         text: 'Contact me',
         href: emailHref,
         icon: envelopeIconSource,
+    },
+    {
+        text: 'Buy Me a Coffee',
+        href: 'coffee',
+        icon: coffeeIconSource,
     },
 ]
 

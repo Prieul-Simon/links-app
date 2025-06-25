@@ -29,18 +29,22 @@ const socialLinks: ConfigurableIconLink[] = [
     {
         href: 'github',
         icon: 'github',
+        tooltip: 'GitHub',
     },
     {
         href: 'linkedin',
         icon: 'linkedin',
+        tooltip: 'LinkedIn',
     },
     {
         href: 'instagram',
         icon: 'instagram',
+        tooltip: 'Instagram',
     },
     {
         href: 'bluesky',
         icon: 'bluesky',
+        tooltip: 'Bluesky',
     },
 ]
 const links: ConfigurableAppLink[] = [
@@ -119,6 +123,7 @@ const nonHiddenLinks = links.filter(link => link.hidden !== true)
             <icon-link v-for="link in nonHiddenSocialLinks"
                         :href="link.href"
                         :icon="link.icon"
+                        :tooltip="link.tooltip"
             />
         </div>
         <div id="links-container">

@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "            bunx --bun vite",
-    "tsc-watch": "      vue-tsc -p tsconfig.app.json --watch",
-    "tsc": "            vue-tsc -p tsconfig.app.json",
+    "typecheck-watch": "vue-tsc -p tsconfig.app.json --watch",
+    "typecheck": "      vue-tsc -p tsconfig.app.json",
     "bundle": "         bunx --bun vite build",
-    "build": "          bun run tsc && bun run bundle",
+    "build": "          bun run typecheck && bun run bundle",
     "preview": "        bunx --bun vite preview"
   },
   "dependencies": {

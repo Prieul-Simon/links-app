@@ -87,7 +87,7 @@ const links: ConfigurableAppLink[] = [
     {
         hidden: false,
         text: 'Chess.com',
-        href: 'chesscomm',
+        href: 'chesscom',
         icon: 'chess',
     },
     {

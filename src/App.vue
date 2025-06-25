@@ -90,7 +90,7 @@ const links: ConfigurableAppLink[] = [
         uninvertedIcon: moxfieldIconSource,
     },
     {
-        hidden: true,
+        hidden: false,
         text: 'Chess.com',
         href: 'chesscomm',
         icon: chessIconSource,

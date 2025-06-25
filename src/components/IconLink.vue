@@ -3,6 +3,8 @@
 type IconType = 
     | 'instagram'
     | 'bluesky'
+    | 'github'
+    | 'linkedin'
 
 const props = defineProps<{
     href: string,
@@ -16,6 +18,10 @@ const computeFontAwesome: ((icon: IconType) => string) = (icon) => {
             return 'fa-brands fa-bluesky'
         case 'instagram':
             return 'fa-brands fa-instagram'
+            case 'github':
+            return 'fa-brands fa-github'
+        case 'linkedin':
+            return 'fa-brands fa-linkedin'
         default:
             return 'fa-solid fa-circle-question'
     }

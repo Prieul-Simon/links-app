@@ -2,14 +2,10 @@
 import AppLink from './components/AppLink.vue';
 import IconLink from './components/IconLink.vue';
 import ProfilePicture from './components/ProfilePicture.vue';
-import blueskyIconSource from './images/bluesky.svg';
 import chessIconSource from './images/chess.svg';
 import coffeeIconSource from './images/coffee.svg';
 import envelopeIconSource from './images/envelope.svg';
-import ghIconSource from './images/gh.svg';
 import idcardIconSource from './images/idcard.svg';
-import instagramIconSource from './images/instagram.svg';
-import linkedinIconSource from './images/linkedin.svg';
 import moxfieldIconSource from './images/moxfield.png';
 import webIconSource from './images/web.svg';
 import welovedevsIconSource from './images/welovedevs.png';
@@ -31,8 +27,18 @@ const emailHref = 'mailto:YzJsdGIyNHVjSEpwWlhWc1FHZHRZV2xzTG1OdmJRPT0=?subject=M
 type HideableLink = {
     hidden?: boolean,
 }
+type ConfigurableIconLink = ComponentProps<typeof IconLink> & HideableLink
+type ConfigurableAppLink = ComponentProps<typeof AppLink> & HideableLink
 
-const socialLinks: (ComponentProps<typeof IconLink> & HideableLink)[] = [
+const socialLinks: ConfigurableIconLink[] = [
+    {
+        href: 'github',
+        icon: 'github',
+    },
+    {
+        href: 'linkedin',
+        icon: 'linkedin',
+    },
     {
         href: 'instagram',
         icon: 'instagram',
@@ -40,18 +46,18 @@ const socialLinks: (ComponentProps<typeof IconLink> & HideableLink)[] = [
     {
         href: 'bluesky',
         icon: 'bluesky',
-    }
+    },
 ]
-const links: (ComponentProps<typeof AppLink> & HideableLink)[] = [
+const links: ConfigurableAppLink[] = [
     {
         text: 'My homepage',
         href: 'https://simon.prieul.fr',
         icon: webIconSource,
     },
     {
+        hidden: true,
         text: 'LinkedIn',
         href: 'linkedin',
-        icon: linkedinIconSource,
     },
     {
         text: 'WeLoveDevs',
@@ -64,21 +70,19 @@ const links: (ComponentProps<typeof AppLink> & HideableLink)[] = [
         icon: idcardIconSource,
     },
     {
+        hidden: true,
         text: 'GitHub',
         href: 'github',
-        icon: ghIconSource,
     },
     {
         hidden: true,
         text: 'Instagram',
         href: 'instagram',
-        icon: instagramIconSource,
     },
     {
         hidden: true,
         text: 'Bluesky',
         href: 'bluesky',
-        icon: blueskyIconSource,
     },
     {
         text: 'Moxfield',

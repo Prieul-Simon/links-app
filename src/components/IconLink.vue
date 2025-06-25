@@ -1,10 +1,6 @@
 <script setup lang="ts">
+import { computeFontAwesome, type IconType } from '../utils/fontawesome';
 
-type IconType = 
-    | 'instagram'
-    | 'bluesky'
-    | 'github'
-    | 'linkedin'
 
 const props = defineProps<{
     href: string,
@@ -12,20 +8,6 @@ const props = defineProps<{
 }>()
 
 const absoluteHref = `https://links.prieul.fr/${props.href}`
-const computeFontAwesome: ((icon: IconType) => string) = (icon) => {
-    switch (icon) {
-        case 'bluesky':
-            return 'fa-brands fa-bluesky'
-        case 'instagram':
-            return 'fa-brands fa-instagram'
-            case 'github':
-            return 'fa-brands fa-github'
-        case 'linkedin':
-            return 'fa-brands fa-linkedin'
-        default:
-            return 'fa-solid fa-circle-question'
-    }
-}
 </script>
 
 <template>

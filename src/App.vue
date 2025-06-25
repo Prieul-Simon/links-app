@@ -2,12 +2,7 @@
 import AppLink from './components/AppLink.vue';
 import IconLink from './components/IconLink.vue';
 import ProfilePicture from './components/ProfilePicture.vue';
-import chessIconSource from './images/chess.svg';
-import coffeeIconSource from './images/coffee.svg';
-import envelopeIconSource from './images/envelope.svg';
-import idcardIconSource from './images/idcard.svg';
 import moxfieldIconSource from './images/moxfield.png';
-import webIconSource from './images/web.svg';
 import welovedevsIconSource from './images/welovedevs.png';
 import type { ComponentProps } from './utils/types';
 
@@ -52,7 +47,7 @@ const links: ConfigurableAppLink[] = [
     {
         text: 'My homepage',
         href: 'https://simon.prieul.fr',
-        icon: webIconSource,
+        icon: 'mywebpage',
     },
     {
         hidden: true,
@@ -67,7 +62,7 @@ const links: ConfigurableAppLink[] = [
     {
         text: 'My resume',
         href: 'https://simon.prieul.fr/static/resume.pdf',
-        icon: idcardIconSource,
+        icon: 'myresume',
     },
     {
         hidden: true,
@@ -93,17 +88,17 @@ const links: ConfigurableAppLink[] = [
         hidden: false,
         text: 'Chess.com',
         href: 'chesscomm',
-        icon: chessIconSource,
+        icon: 'chess',
     },
     {
         text: 'Contact me',
         href: emailHref,
-        icon: envelopeIconSource,
+        icon: 'sendmeanemail',
     },
     {
         text: 'Buy Me a Coffee',
         href: 'coffee',
-        icon: coffeeIconSource,
+        icon: 'buymeacoffee',
     },
 ]
 

@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { computeFontAwesome, type IconType } from '../utils/fontawesome';
 import { openDecodedMailto } from '../utils/mailto';
+
 
 const props = defineProps<{
     text: string,
     href: string,
-    icon?: string,
+    icon?: IconType,
     uninvertedIcon?: string,
 }>()
 
@@ -24,7 +26,9 @@ if (props.href.startsWith('mailto:')) {
 <template>
     <div class="app-link">
         <a type="button" ref="aElement" :href="absoluteHref" :onclick="onclick" :target="target">
-            <img v-if="icon" class="app-link-icon" :src="icon">
+            <span v-if="icon" class="app-link-icon">
+                <i :class="computeFontAwesome(icon)"></i>
+            </span>
             <img v-if="uninvertedIcon" class="app-link-uninverted-icon" :src="uninvertedIcon">
             {{ text }}
         </a>
@@ -58,16 +62,18 @@ a, a:visited {
     cursor: pointer;
 }
 
-.app-link-icon,
+.app-link-icon {
+    font-size: 36px;
+}
 .app-link-uninverted-icon {
     width: 36px;
     height: 36px;
+}
+.app-link-icon,
+.app-link-uninverted-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 12px;
-}
-.app-link:hover .app-link-icon {
-    filter: invert(1)
 }
 </style>

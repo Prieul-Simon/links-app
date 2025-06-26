@@ -9,7 +9,7 @@ const props = defineProps<{
     tooltip?: string,
 }>()
 
-const absoluteHref = `https://links.prieul.fr/${props.href}`
+const absoluteHref = `${__LINKS_APP_URL}/${props.href}`
 </script>
 
 <template>

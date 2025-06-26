@@ -6,6 +6,8 @@ import moxfieldIconSource from './images/moxfield.png';
 import welovedevsIconSource from './images/welovedevs.png';
 import type { ComponentProps } from './utils/types';
 
+const profilePictureSource = `${__STATIC_APP_URL}/profile-picture-1.jpeg`
+
 // const imageAlt = 'A picture of my face, while taking a coffee outside.'
 const imgAlt = 'A picture of me by the water.'
 
@@ -50,7 +52,7 @@ const socialLinks: ConfigurableIconLink[] = [
 const links: ConfigurableAppLink[] = [
     {
         text: 'My homepage',
-        href: 'https://simon.prieul.fr',
+        href: __HOMEPAGE_APP_URL,
         icon: 'mywebpage',
     },
     {
@@ -65,7 +67,7 @@ const links: ConfigurableAppLink[] = [
     },
     {
         text: 'My resume',
-        href: 'https://simon.prieul.fr/static/resume.pdf',
+        href: `${__STATIC_APP_URL}/resume.pdf`,
         icon: 'myresume',
     },
     {
@@ -113,7 +115,7 @@ const nonHiddenLinks = links.filter(link => link.hidden !== true)
 <template>
     <div id="tree">
         <div id="profile-picture">
-            <profile-picture source="https://simon.prieul.fr/static/profile-picture-1.jpeg"
+            <profile-picture :source="profilePictureSource"
                                 :alt="imgAlt"
              />
         </div>

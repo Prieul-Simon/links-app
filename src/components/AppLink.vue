@@ -18,7 +18,7 @@ if (props.href.startsWith('mailto:')) {
     onclick=openDecodedMailto(props.href)
     target = undefined
 } else if (!props.href.startsWith('http')) {
-    absoluteHref = `https://links.prieul.fr/${props.href}`
+    absoluteHref = `${__LINKS_APP_URL}/${props.href}`
 }
 
 </script>

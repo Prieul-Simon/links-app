@@ -18,7 +18,7 @@ if (props.href.startsWith('mailto:')) {
     onclick=openDecodedMailto(props.href)
     target = undefined
 } else if (!props.href.startsWith('http')) {
-    absoluteHref = `https://links.prieul.fr/${props.href}`
+    absoluteHref = `${__LINKS_APP_URL}/${props.href}`
 }
 
 </script>
@@ -64,8 +64,9 @@ a, a:visited {
 
 .app-link-icon {
     font-size: 36px;
+    width: 36px; /* same width as img.app-link-uninverted-icon => thus, every icon is aligned vertically */
 }
-.app-link-uninverted-icon {
+img.app-link-uninverted-icon {
     width: 36px;
     height: 36px;
 }

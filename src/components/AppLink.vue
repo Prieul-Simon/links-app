@@ -64,8 +64,9 @@ a, a:visited {
 
 .app-link-icon {
     font-size: 36px;
+    width: 36px; /* same width as img.app-link-uninverted-icon => thus, every icon is aligned vertically */
 }
-.app-link-uninverted-icon {
+img.app-link-uninverted-icon {
     width: 36px;
     height: 36px;
 }

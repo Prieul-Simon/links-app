@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 const STATIC_ENV = {
     __LINKS_APP_URL: 'https://links.prieul.fr',
     __HOMEPAGE_APP_URL: 'https://simon.prieul.fr',
-    __STATIC_APP_URL: 'https://simon.prieul.fr/static',
+    __STATIC_APP_URL: 'https://static.prieul.fr',
 }
 
 const define = Object.fromEntries(

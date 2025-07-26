@@ -26,10 +26,13 @@ export function computeFontAwesome(icon: IconType): string {
 }
 
 function getRandomIconForChess(): string {
+    const defaultOne = 'fa-solid fa-chess-knight'
+    if (import.meta.env.SSR) return defaultOne
+    
     const randomIndex = Math.floor(Math.random() * 3)
     return [
         'fa-solid fa-chess',
-        'fa-solid fa-chess-knight',
+        defaultOne,
         'fa-solid fa-chess-bishop',
     ][randomIndex] ?? 'fa-solid fa-circle-question'
 }

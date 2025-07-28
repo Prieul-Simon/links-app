@@ -19,6 +19,18 @@ export default defineConfig({
     },
     build: {
         outDir: 'dist',
+        rollupOptions: {
+            output: {
+                advancedChunks: {
+                    groups: [
+                        {
+                            test: /node_modules/,
+                            name: 'libs',
+                        },
+                    ],
+                },
+            },
+        },
     },
     define,
 })

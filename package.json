@@ -7,11 +7,9 @@
     "dev": "            bunx --bun vite",
     "typecheck-watch": "vue-tsc -p tsconfig.app.json --watch",
     "typecheck": "      vue-tsc -p tsconfig.app.json",
-    "bundle": "         bunx --bun vite build",
-    "bundle-ssg": "     bunx --bun vite-ssg build -c vite-ssg.config.ts",
-    "build": "          bun run typecheck && bun run bundle-ssg",
-    "preview": "        bunx --bun vite preview",
-    "preview-ssg": "    bunx --bun vite preview --outDir dist-ssg"
+    "bundle": "         bunx --bun vite-ssg build",
+    "build": "          bun run typecheck && bun run bundle",
+    "preview": "        bunx --bun vite preview"
   },
   "dependencies": {
     "vue": "3.5.17"

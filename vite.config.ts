@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { rm } from 'fs/promises'
+import { type ViteSSGOptions } from 'vite-ssg'
 
 const STATIC_ENV = {
     __LINKS_APP_URL: 'https://links.prieul.fr',
@@ -11,6 +13,15 @@ const define = Object.fromEntries(
     Object.entries(STATIC_ENV).map(([key, value]) => [key, JSON.stringify(value)])
 )
 
+const OUT_DIR = 'dist'
+
+const ssgOptions: ViteSSGOptions = {
+    formatting: 'none',
+    onFinished: async () => {
+        await rm(`./${OUT_DIR}/.vite`, { recursive: true, })
+    },
+}
+
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [vue()],
@@ -18,7 +29,7 @@ export default defineConfig({
         host: '0.0.0.0',
     },
     build: {
-        outDir: 'dist',
+        outDir: OUT_DIR,
         rollupOptions: {
             output: {
                 advancedChunks: {
@@ -32,5 +43,6 @@ export default defineConfig({
             },
         },
     },
+    ssgOptions,
     define,
 })

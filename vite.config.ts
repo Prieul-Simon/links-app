@@ -34,13 +34,17 @@ export default defineConfig({
         outDir: OUT_DIR,
         rollupOptions: {
             output: {
-                advancedChunks: {
-                    groups: [
-                        {
-                            test: /node_modules/,
-                            name: 'libs',
-                        },
-                    ],
+                manualChunks: function(id) {
+                    if (id.includes('node_modules')) return 'libs'
+                    return null
+                    // #### is the equivalent in rolldown.rs to:
+                    // groups: [
+                    //     {
+                    //         test: /node_modules/,
+                    //         name: 'libs',
+                    //     },
+                    // ],
+                    // ####
                 },
             },
         },

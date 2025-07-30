@@ -15,5 +15,6 @@ img {
     height: 96px;
     border-radius: 100%;
     object-fit: contain;
+    vertical-align: baseline;
 }
 </style>

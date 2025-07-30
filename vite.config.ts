@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { rm } from 'fs/promises'
+import { minify } from 'html-minifier-terser'
+import { defineConfig } from 'vite'
 import { type ViteSSGOptions } from 'vite-ssg'
 
 const STATIC_ENV = {
@@ -17,6 +18,7 @@ const OUT_DIR = 'dist'
 
 const ssgOptions: ViteSSGOptions = {
     formatting: 'none',
+    onPageRendered: (_, renderedHTML) => transformHtml(renderedHTML) ,
     onFinished: async () => {
         await rm(`./${OUT_DIR}/.vite`, { recursive: true, })
     },
@@ -46,3 +48,11 @@ export default defineConfig({
     ssgOptions,
     define,
 })
+
+async function transformHtml(html: string): Promise<string> {
+    return await minify(html, {
+        minifyCSS: true,
+        minifyJS: false,
+        removeComments: true,
+    })
+}

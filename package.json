@@ -7,19 +7,19 @@
     "dev": "            bunx --bun vite",
     "typecheck-watch": "vue-tsc -p tsconfig.app.json --watch",
     "typecheck": "      vue-tsc -p tsconfig.app.json",
-    "bundle": "         bunx --bun vite build",
-    "bundle-ssg": "     bunx --bun vite-ssg build -c vite-ssg.config.ts",
-    "build": "          bun run typecheck && bun run bundle-ssg",
-    "preview": "        bunx --bun vite preview",
-    "preview-ssg": "    bunx --bun vite preview --outDir dist-ssg"
+    "bundle": "         bunx --bun vite-ssg build",
+    "build": "          bun run typecheck && bun run bundle",
+    "preview": "        bunx --bun vite preview"
   },
   "dependencies": {
     "vue": "3.5.17"
   },
   "devDependencies": {
     "@types/bun": "1.2.17",
+    "@types/html-minifier-terser": "7.0.2",
     "@vitejs/plugin-vue": "6.0.0",
     "@vue/tsconfig": "0.7.0",
+    "html-minifier-terser": "7.2.0",
     "typescript": "5.8.3",
     "vite": "7.0.0",
     "vite-ssg": "28.0.0",

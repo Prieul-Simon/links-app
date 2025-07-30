@@ -21,3 +21,9 @@ main {
     justify-content: flex-start;
     align-items: center;
 }
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    vertical-align: middle;
+}

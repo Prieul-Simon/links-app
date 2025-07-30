@@ -69,6 +69,7 @@ a, a:visited {
 img.app-link-uninverted-icon {
     width: 36px;
     height: 36px;
+    vertical-align: baseline;
 }
 .app-link-icon,
 .app-link-uninverted-icon {

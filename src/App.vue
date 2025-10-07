@@ -44,6 +44,7 @@ const socialLinks: ConfigurableIconLink[] = [
         tooltip: 'Instagram',
     },
     {
+        hidden: true,
         href: 'bluesky',
         icon: 'bluesky',
         tooltip: 'Bluesky',

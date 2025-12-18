@@ -11,9 +11,13 @@ const profilePictureSource = `${__STATIC_APP_URL}/profile-picture-1.jpeg`
 // const imageAlt = 'A picture of my face, while taking a coffee outside.'
 const imgAlt = 'A picture of me by the water.'
 
+const age = (() => {
+    return Math.floor( (new Date().getTime() - __MY_BIRTHDAY_TIME_MILLISECONDS) / __MEAN_NB_MILLISECONDS_IN_ONE_YEAR )
+})()
+
 const profileDescription = [
     'Software Engineer 💻 | ',
-    '32 | ',
+    `${age} | `,
     'Fullstack Developer 🚀 | ',
     'JS Lover ❤️ | ', 
     'MTG Fan 🎴'

@@ -8,6 +8,9 @@ const STATIC_ENV = {
     __LINKS_APP_URL: 'https://links.prieul.fr',
     __HOMEPAGE_APP_URL: 'https://simon.prieul.fr',
     __STATIC_APP_URL: 'https://static.prieul.fr',
+
+    __MY_BIRTHDAY_TIME_MILLISECONDS: new Date("1992-12-13T00:00:00.000+01:00").getTime(),
+    __MEAN_NB_MILLISECONDS_IN_ONE_YEAR: 1_000 * 60 * 60 * 24 * 365.25,
 }
 
 const define = Object.fromEntries(
